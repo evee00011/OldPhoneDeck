@@ -5,3 +5,8 @@
 PhoneDeck.app/
 PhoneCam/build/
 PhoneCam/.sdk/
+
+
+PhoneDeck.app/
+.DS_Store
+*.cer

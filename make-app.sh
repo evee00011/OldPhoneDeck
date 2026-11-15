@@ -76,7 +76,7 @@ extendedKeyUsage = critical, codeSigning
 basicConstraints = critical, CA:false
 CNF
   openssl req -x509 -newkey rsa:2048 -nodes -days 3650 -config "$T/cert.cnf" -extensions ext -keyout "$T/key.pem" -out "$T/cert.pem" 2>/dev/null
-  openssl pkcs12 -export -inkey "$T/key.pem" -in "$T/cert.pem" -name "$ID" -out "$T/id.p12" -passout pass:"$KCPW" 2>/dev/null
+  openssl pkcs12 -export -legacy -inkey "$T/key.pem" -in "$T/cert.pem" -name "$ID" -out "$T/id.p12" -passout pass:"$KCPW" 2>/dev/null
   security create-keychain -p "$KCPW" "$KC"
   security set-keychain-settings "$KC"
   security unlock-keychain -p "$KCPW" "$KC"
